@@ -71,7 +71,7 @@ def load_charts(chart_list=None, render_to=''):
         for hco, render_to in izip_longest(chart_list, render_to_list):
             if render_to:
                 hco['chart']['renderTo'] = render_to
-        embed_script = (embed_script % (simplejson.dumps(chart_list, 
+        embed_script = (embed_script % (json.dumps(chart_list, 
                                                          use_decimal=True,
                                                          default=date_format),
                                         CHART_LOADER_URL))
