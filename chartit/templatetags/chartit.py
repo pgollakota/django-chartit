@@ -1,10 +1,10 @@
 from itertools import izip_longest
 
 from django import template
-from django.utils import simplejson
 from django.utils.safestring import mark_safe
 from django.conf import settings
 import posixpath
+import json
 
 from ..charts import Chart, PivotChart
 
@@ -71,8 +71,7 @@ def load_charts(chart_list=None, render_to=''):
         for hco, render_to in izip_longest(chart_list, render_to_list):
             if render_to:
                 hco['chart']['renderTo'] = render_to
-        embed_script = (embed_script % (simplejson.dumps(chart_list, 
-                                                         use_decimal=True,
+        embed_script = (embed_script % (json.dumps(chart_list, 
                                                          default=date_format),
                                         CHART_LOADER_URL))
     else:
