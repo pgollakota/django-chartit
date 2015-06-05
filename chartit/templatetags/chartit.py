@@ -1,7 +1,7 @@
 from itertools import izip_longest
 
 from django import template
-from django.utils import simplejson
+from django.utils import json
 from django.utils.safestring import mark_safe
 from django.conf import settings
 import posixpath
