@@ -72,7 +72,6 @@ def load_charts(chart_list=None, render_to=''):
             if render_to:
                 hco['chart']['renderTo'] = render_to
         embed_script = (embed_script % (json.dumps(chart_list, 
-                                                         use_decimal=True,
                                                          default=date_format),
                                         CHART_LOADER_URL))
     else:
