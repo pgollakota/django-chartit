@@ -2,7 +2,7 @@ import copy
 from collections import defaultdict
 from itertools import groupby, izip
 # use SortedDict instead of native OrderedDict for Python 2.6 compatibility
-from django.utils.datastructures import SortedDict
+from collections import OrderedDict as SortedDict
 
 from highcharts import HCOptions
 from validation import clean_pcso, clean_cso, clean_x_sortf_mapf_mts
