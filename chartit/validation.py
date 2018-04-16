@@ -77,8 +77,7 @@ def _validate_field_lookup_term(model, term, query):
         return term
 
     if terms[0] not in model_fields:
-        raise APIInputError("Field %r does not exist. Valid lookups are %s."
-                            % (terms[0], ', '.join(model_fields)))
+        return terms[0]
     if len(terms) == 1:
         return model._meta.get_field(terms[0]).verbose_name
     else:
